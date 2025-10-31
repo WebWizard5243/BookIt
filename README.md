@@ -1,5 +1,8 @@
 # 📚 BookIt: Experiences & Slots
 
+**Name = Md Kaif Nawaz Khurram**
+**Date = 31/10/2025**
+
 An end-to-end web application that allows users to explore travel experiences, view available slots, and complete bookings seamlessly.
 
 This project demonstrates the complete workflow of a modern fullstack application — from UI design fidelity to backend data handling and database integration.
