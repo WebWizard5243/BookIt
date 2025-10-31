@@ -60,7 +60,7 @@ DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE_NAME"
 ```
 
 
-### 5.	Start the Development Server
+### 4️⃣.	Start the Development Server
 
 ```undefined
 npm run dev
