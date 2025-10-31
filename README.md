@@ -67,3 +67,24 @@ npm run dev
 # or
 yarn dev
 ```
+
+##  📁 Project Structure 
+
+```undefined
+BookIt/
+├── src/
+│   ├── app/                    # Next.js App Router pages
+│   │   ├── page.tsx           # Home page (browse experiences)
+│   │   ├── details/           # Experience details page
+│   │   ├── checkout/          # Checkout flow page
+│   │   └── result/            # Booking confirmation page
+│   ├── components/            # Reusable UI components
+│   ├── lib/                   # Database utilities & configurations
+│   └── styles/                # Global styles and CSS modules
+├── public/                    # Static assets (images, icons)
+├── database/                  # Database scripts and migrations
+├── .env.local                 # Environment variables (DATABASE_URL)
+├── package.json               # Dependencies
+└── README.md                  # Project documentation
+
+```
