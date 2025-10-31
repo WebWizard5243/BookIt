@@ -147,14 +147,14 @@ export function CheckoutForm({
       <button
         type="button"
         onClick={() => window.history.back()}
-        className="mb-8 flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
+        className="mb-6 sm:mb-8 flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
       >
         ← Checkout
       </button>
 
       {/* Name & Email */}
-      <div className="bg-white rounded-lg p-6 mb-6">
-        <div className="grid grid-cols-2 gap-4 mb-4">
+      <div className="bg-white rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
               Full name
@@ -188,7 +188,7 @@ export function CheckoutForm({
           <label className="block text-sm font-semibold text-gray-700 mb-2">
             Promo code
           </label>
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row gap-2">
             <input
               type="text"
               placeholder="Enter promo code"
@@ -201,7 +201,7 @@ export function CheckoutForm({
               type="button"
               onClick={handleApplyPromo}
               disabled={!promoCode.trim() || isApplying || appliedPromo !== null || isSubmitting}
-              className="px-6 py-2 bg-black text-white font-semibold rounded hover:bg-gray-800 disabled:bg-gray-400 transition-colors"
+              className="px-6 py-2 bg-black text-white font-semibold rounded hover:bg-gray-800 disabled:bg-gray-400 transition-colors whitespace-nowrap"
             >
               {isApplying ? 'Applying...' : 'Apply'}
             </button>
@@ -209,7 +209,7 @@ export function CheckoutForm({
 
           {/* Applied Promo Badge */}
           {appliedPromo && (
-            <div className="mt-2 flex items-center gap-2">
+            <div className="mt-2 flex flex-wrap items-center gap-2">
               <span className="text-sm font-semibold text-green-600">
                 ✓ {appliedPromo.code} applied (₹{appliedPromo.discount} off)
               </span>
@@ -227,14 +227,14 @@ export function CheckoutForm({
       </div>
 
       {/* Terms & Conditions */}
-      <div className="flex items-start gap-3 mb-6">
+      <div className="flex items-start gap-3 mb-4 sm:mb-6">
         <input
           type="checkbox"
           id="terms"
           checked={agreeTerms}
           onChange={(e) => setAgreeTerms(e.target.checked)}
           disabled={isSubmitting}
-          className="mt-1 w-4 h-4 rounded border-gray-300 cursor-pointer disabled:opacity-50"
+          className="mt-1 w-4 h-4 rounded border-gray-300 cursor-pointer disabled:opacity-50 flex-shrink-0"
         />
         <label htmlFor="terms" className="text-sm text-gray-600 cursor-pointer">
           I agree to the terms and safety policy

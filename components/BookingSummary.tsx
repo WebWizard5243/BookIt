@@ -134,52 +134,52 @@ export function BookingSummary({
   }
 
   return (
-    <div className="sticky top-24 bg-[#E9E9E9] rounded-lg shadow-md p-6">
-      <div className="space-y-4">
+    <div className="lg:sticky lg:top-24 bg-[#E9E9E9] rounded-lg shadow-md p-4 sm:p-6">
+      <div className="space-y-3 sm:space-y-4">
         {isCheckoutMode ? (
           <>
             {/* Checkout Mode - Read Only */}
-            <div className="border-b border-gray-200 pb-4">
-              <p className="text-sm text-[#656565] mb-1">Experience</p>
-              <p className="font-semibold text-black">{experience.name}</p>
+            <div className="border-b border-gray-200 pb-3 sm:pb-4">
+              <p className="text-xs sm:text-sm text-[#656565] mb-1">Experience</p>
+              <p className="font-semibold text-black text-sm sm:text-base">{experience.name}</p>
             </div>
 
-            <div className="flex justify-between">
-              <span className="text-[#656565] text-sm">Date</span>
-              <span className="font-semibold text-black">{formatDate(date)}</span>
+            <div className="flex justify-between items-center">
+              <span className="text-[#656565] text-xs sm:text-sm">Date</span>
+              <span className="font-semibold text-black text-sm sm:text-base">{formatDate(date)}</span>
             </div>
 
-            <div className="flex justify-between">
-              <span className="text-[#656565] text-sm">Time</span>
-              <span className="font-semibold text-black">{formatTime(time)}</span>
+            <div className="flex justify-between items-center">
+              <span className="text-[#656565] text-xs sm:text-sm">Time</span>
+              <span className="font-semibold text-black text-sm sm:text-base">{formatTime(time)}</span>
             </div>
 
-            <div className="flex justify-between">
-              <span className="text-[#656565] text-sm">Qty</span>
-              <span className="font-semibold text-black">{propQuantity}</span>
+            <div className="flex justify-between items-center">
+              <span className="text-[#656565] text-xs sm:text-sm">Qty</span>
+              <span className="font-semibold text-black text-sm sm:text-base">{propQuantity}</span>
             </div>
 
-            <div className="flex justify-between pt-4 border-t border-gray-200">
-              <span className="text-[#656565]">Subtotal</span>
-              <span className="font-semibold">₹{finalSubtotal}</span>
+            <div className="flex justify-between items-center pt-3 sm:pt-4 border-t border-gray-200">
+              <span className="text-[#656565] text-sm sm:text-base">Subtotal</span>
+              <span className="font-semibold text-sm sm:text-base">₹{finalSubtotal}</span>
             </div>
 
             {/* Show Discount if Applied */}
             {finalDiscountAmount > 0 && (
-              <div className="flex justify-between">
-                <span className="text-green-600 font-semibold">Discount</span>
-                <span className="text-green-600 font-semibold">-₹{finalDiscountAmount}</span>
+              <div className="flex justify-between items-center">
+                <span className="text-green-600 font-semibold text-sm sm:text-base">Discount</span>
+                <span className="text-green-600 font-semibold text-sm sm:text-base">-₹{finalDiscountAmount}</span>
               </div>
             )}
 
-            <div className="flex justify-between">
-              <span className="text-[#656565]">Taxes</span>
-              <span className="font-semibold">₹{finalTaxes}</span>
+            <div className="flex justify-between items-center">
+              <span className="text-[#656565] text-sm sm:text-base">Taxes</span>
+              <span className="font-semibold text-sm sm:text-base">₹{finalTaxes}</span>
             </div>
 
-            <div className="flex justify-between pt-4 border-t border-gray-200">
-              <span className="font-bold text-lg text-black">Total</span>
-              <span className="text-2xl font-bold text-black">₹{finalTotal}</span>
+            <div className="flex justify-between items-center pt-3 sm:pt-4 border-t border-gray-200">
+              <span className="font-bold text-base sm:text-lg text-black">Total</span>
+              <span className="text-xl sm:text-2xl font-bold text-black">₹{finalTotal}</span>
             </div>
 
             {/* CHECKOUT MODE BUTTON - Submits Form */}
@@ -187,7 +187,7 @@ export function BookingSummary({
               type="submit"
               form="checkout-form"
               disabled={isSubmitting}
-              className="w-full py-3 rounded font-semibold text-black mt-6 transition-colors bg-yellow-400 hover:bg-yellow-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-2.5 sm:py-3 rounded font-semibold text-black mt-4 sm:mt-6 transition-colors bg-yellow-400 hover:bg-yellow-500 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
               style={{ backgroundColor: isSubmitting ? '#ccaa00' : '#FFD643' }}
             >
               {isSubmitting ? 'Processing...' : 'Pay and Confirm'}
@@ -197,23 +197,23 @@ export function BookingSummary({
           <>
             {/* Booking Mode - Interactive */}
             <div className="flex justify-between items-center">
-              <span className="text-[#656565]">Starts at</span>
-              <span className="text-2xl font-bold text-black">₹{experience.price}</span>
+              <span className="text-[#656565] text-sm sm:text-base">Starts at</span>
+              <span className="text-xl sm:text-2xl font-bold text-black">₹{experience.price}</span>
             </div>
 
-            <div className="flex justify-between items-center pt-4 border-t border-gray-200">
-              <span className="text-[#656565]">Quantity</span>
-              <div className="flex items-center gap-3">
+            <div className="flex justify-between items-center pt-3 sm:pt-4 border-t border-gray-200">
+              <span className="text-[#656565] text-sm sm:text-base">Quantity</span>
+              <div className="flex items-center gap-2 sm:gap-3">
                 <button
                   onClick={handleDecrement}
-                  className="w-8 h-8 rounded border border-gray-300 hover:bg-gray-100 flex items-center justify-center"
+                  className="w-7 h-7 sm:w-8 sm:h-8 rounded border border-gray-300 hover:bg-gray-100 flex items-center justify-center text-lg"
                 >
                   −
                 </button>
-                <span className="w-8 text-center font-semibold">{quantity}</span>
+                <span className="w-6 sm:w-8 text-center font-semibold text-sm sm:text-base">{quantity}</span>
                 <button
                   onClick={handleIncrement}
-                  className="w-8 h-8 rounded border border-gray-300 hover:bg-gray-100 flex items-center justify-center"
+                  className="w-7 h-7 sm:w-8 sm:h-8 rounded border border-gray-300 hover:bg-gray-100 flex items-center justify-center text-lg"
                 >
                   +
                 </button>
@@ -221,25 +221,25 @@ export function BookingSummary({
             </div>
 
             <div className="flex justify-between items-center">
-              <span className="text-[#656565]">Subtotal</span>
-              <span className="text-gray-900 font-semibold">₹{finalSubtotal}</span>
+              <span className="text-[#656565] text-sm sm:text-base">Subtotal</span>
+              <span className="text-gray-900 font-semibold text-sm sm:text-base">₹{finalSubtotal}</span>
             </div>
 
             <div className="flex justify-between items-center">
-              <span className="text-[#656565]">Taxes</span>
-              <span className="text-gray-900 font-semibold">₹{finalTaxes}</span>
+              <span className="text-[#656565] text-sm sm:text-base">Taxes</span>
+              <span className="text-gray-900 font-semibold text-sm sm:text-base">₹{finalTaxes}</span>
             </div>
 
-            <div className="flex justify-between items-center pt-4 border-t border-gray-200">
-              <span className="font-bold text-black text-lg">Total</span>
-              <span className="text-2xl font-bold text-black">₹{finalTotal}</span>
+            <div className="flex justify-between items-center pt-3 sm:pt-4 border-t border-gray-200">
+              <span className="font-bold text-black text-base sm:text-lg">Total</span>
+              <span className="text-xl sm:text-2xl font-bold text-black">₹{finalTotal}</span>
             </div>
 
             {/* BOOKING MODE BUTTON - Navigates to Checkout */}
             <button
               onClick={handleConfirm}
               disabled={isDisabled}
-              className={`w-full py-3 rounded font-semibold text-black mt-6 transition-colors ${
+              className={`w-full py-2.5 sm:py-3 rounded font-semibold text-black mt-4 sm:mt-6 transition-colors text-sm sm:text-base ${
                 isDisabled
                   ? 'bg-gray-400 text-gray-800 cursor-not-allowed opacity-50'
                   : 'bg-yellow-400 hover:bg-yellow-500'
